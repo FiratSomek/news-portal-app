@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.newsCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  border-bottom: 4px solid black;
+  padding: 20px;
+  margin: 0 20px;
+}
+.newsImg {
+  min-width: 700px;
+  max-width: 700px;
+  min-height: 400px;
+  max-height: 400px;
+  border-radius: 10px;
+}
+.categoriesUi {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.categoriesUi:hover {
+  color: lightgray;
+  transform: scale(1.2);
+}
+.activetab {
+  color: #007bff; /* Aktif tab için renk */
+  text-decoration: underline; /* Alt çizgi ile vurgulama */
+}
