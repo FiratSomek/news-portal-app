@@ -1,7 +1,8 @@
 import React from "react";
 import { IoMdMenu } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
-import Categories from "@/components/Categories";
+import Navbar from "@/components/Navbar";
+import Link from "next/link";
 
 export const Header = () => {
   return (
@@ -11,13 +12,15 @@ export const Header = () => {
           <IoMdMenu className="text-4xl mx-2 cursor-pointer" />
 
           <FaSearch className="text-2xl mx-2 cursor-pointer" />
-        </div>
-        <div className="flex text-lg text-white cursor-pointer">
-          <div className="font-bold  bg-black p-2 m-1">N</div>
-          <div className="font-bold bg-black p-2 m-1">E</div>
-          <div className="font-bold bg-black p-2 m-1">W</div>
-          <div className="font-bold bg-black p-2 m-1">S</div>
-        </div>
+        </div>{" "}
+        <Link href={"/"}>
+          <div className="flex text-lg text-white cursor-pointer">
+            <div className="font-bold  bg-black p-2 m-1">N</div>
+            <div className="font-bold bg-black p-2 m-1">E</div>
+            <div className="font-bold bg-black p-2 m-1">W</div>
+            <div className="font-bold bg-black p-2 m-1">S</div>
+          </div>{" "}
+        </Link>
         <div className="flex mx-5">
           <button className=" bg-black text-white w-20 h-10 p-2 font-bold mx-2">
             Register
@@ -26,7 +29,7 @@ export const Header = () => {
         </div>
       </div>
       <div>
-        <Categories />
+        <Navbar />
       </div>
     </div>
   );

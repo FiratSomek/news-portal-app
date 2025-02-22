@@ -1,57 +1,50 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Link from "next/link";
 import NewsCard from "@/components/NewsCard";
+import { useEffect, useState } from "react";
+import { API_URL, API_KEY } from "../../config";
 
-interface Articles {
+interface NewsItem {
   author: string;
   description: string;
-  publishedAt: string;
   title: string;
-  url: string;
   urlToImage: string;
+  url: string;
 }
-const apiUrl = "https://newsapi.org/v2/everything";
-const apiKey = "83e0379495354d1cadf88393462a190a";
 
 export default function Home() {
-  const [data, setData] = useState<Articles[]>([]);
-
+  const [newsData, setNewsData] = useState<NewsItem[]>([]);
+  console.log(newsData);
   useEffect(() => {
-    async function fetchPosts() {
-      const res = await fetch(`${apiUrl}?q=gold&apiKey=${apiKey}`);
-      const request = await res.json();
-      setData(request.articles);
-    }
-    fetchPosts();
+    const fetchData = async () => {
+      const response = await fetch(
+        `${API_URL}?sources=bbc-news&apiKey=${API_KEY}`
+      );
+      const data = await response.json();
+      console.log(data); // Yanıtı görmek için ekleyin
+      setNewsData(data.articles || []); // Eğer 'data' yoksa boş bir dizi kullan
+    };
+    fetchData();
   }, []);
-  console.log(data);
+
   return (
     <div>
       <ul>
-        {data.map((item, index) => (
-          <NewsCard
-            key={index}
-            author={item.author}
-            description={item.description}
-            title={item.title}
-            urlToImage={item.urlToImage}
-            url={item.url}
-          />
-          // <li key={index}>
-          //   {item.urlToImage ? (
-          //     <img src={item.urlToImage} alt={item.title} width={200} />
-          //   ) : (
-          //     <div>No image available</div>
-          //   )}
-          //   <h3>{item.title}</h3>
-          //   <p>{item.description}</p>
-          //   <Link href={item.url} target="_blank">
-          //     Read more
-          //   </Link>
-          // </li>
-        ))}
+        {newsData && Array.isArray(newsData) ? (
+          newsData.map((item, index) => (
+            <li key={index}>
+              <NewsCard
+                author={item.author}
+                description={item.description}
+                title={item.title}
+                urlToImage={item.urlToImage}
+                url={item.url}
+              />
+            </li>
+          ))
+        ) : (
+          <p>Haberler yükleniyor veya veri yok...</p>
+        )}
       </ul>
     </div>
   );

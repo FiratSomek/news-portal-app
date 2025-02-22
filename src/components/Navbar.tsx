@@ -1,17 +1,15 @@
 import Link from "next/link";
 import React from "react";
 
-const Categories = () => {
+const Navbar = () => {
   const CategoryNames = [
     "Home",
-    "Sports",
     "Business",
-    "Innovation",
-    "Culture",
-    "Arts",
-    "Travel",
-    "Earth",
-    "Video",
+    "Entertainment",
+    "Health",
+    "Science",
+    "Sports",
+    "Technology",
   ];
   return (
     <div className="p-5 border-b-4 border-t-4 ">
@@ -19,7 +17,11 @@ const Categories = () => {
         {CategoryNames.map((item, index) => (
           <li key={index} className="categoriesUi">
             <Link
-              href={item === "Home" ? `/` : `/categories/${item.toLowerCase()}`}
+              href={
+                item === "Home"
+                  ? `/`
+                  : `/categoryDetail/${item.toLocaleLowerCase()}`
+              }
             >
               {item}
             </Link>
@@ -30,4 +32,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default Navbar;
