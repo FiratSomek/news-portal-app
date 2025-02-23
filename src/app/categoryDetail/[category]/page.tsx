@@ -3,18 +3,13 @@
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { API_URL, API_KEY } from "../../../../config";
-
-interface NewsByCategoryProps {
-  description: string;
-}
+import CategoryCard, { CategoryCardProps } from "@/components/CategoryCard";
 
 const CategoryDetailPage = () => {
   const params = useParams();
   const category = params?.category as string;
-  const [newsByCategory, setNewsByCategory] = useState<NewsByCategoryProps[]>(
-    []
-  );
-  console.log(newsByCategory);
+  const [newsByCategory, setNewsByCategory] = useState<CategoryCardProps[]>([]);
+
   useEffect(() => {
     const fetchNewsByCategory = async () => {
       const response = await fetch(
@@ -33,7 +28,12 @@ const CategoryDetailPage = () => {
         {newsByCategory && Array.isArray(newsByCategory) ? (
           newsByCategory.map((item, index) => (
             <li key={index}>
-              <p>{item.description}</p>
+              <CategoryCard
+                name={item.name}
+                description={item.description}
+                url={item.url}
+                country={item.country}
+              />
             </li>
           ))
         ) : (

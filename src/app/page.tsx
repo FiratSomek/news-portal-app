@@ -1,19 +1,11 @@
 "use client";
 
-import NewsCard from "@/components/NewsCard";
+import HomePageCard, { NewsCardProps } from "@/components/HomePageCard";
 import { useEffect, useState } from "react";
 import { API_URL, API_KEY } from "../../config";
 
-interface NewsItem {
-  author: string;
-  description: string;
-  title: string;
-  urlToImage: string;
-  url: string;
-}
-
 export default function Home() {
-  const [newsData, setNewsData] = useState<NewsItem[]>([]);
+  const [newsData, setNewsData] = useState<NewsCardProps[]>([]);
   console.log(newsData);
   useEffect(() => {
     const fetchData = async () => {
@@ -33,7 +25,7 @@ export default function Home() {
         {newsData && Array.isArray(newsData) ? (
           newsData.map((item, index) => (
             <li key={index}>
-              <NewsCard
+              <HomePageCard
                 author={item.author}
                 description={item.description}
                 title={item.title}

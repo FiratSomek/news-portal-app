@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import "../../styles/globals.css";
 
-interface NewsCardProps {
+export interface NewsCardProps {
   author: string;
   description: string;
   title: string;
@@ -18,7 +18,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
   url,
 }) => {
   return (
-    <div className="newsCard">
+    <div className="homePageCardUi">
       <div>
         <img className="newsImg" src={urlToImage} alt={title} />
       </div>
