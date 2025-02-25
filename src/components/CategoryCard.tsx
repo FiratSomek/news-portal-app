@@ -21,7 +21,11 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
       <Link target="_blank" href={url}>
         <SeeMoreButton />
       </Link>
-      <h3>{country}</h3>
+      <img
+        src={`https://flagcdn.com/32x24/${country}.png`}
+        alt={country}
+        className="shadow-lg"
+      />
       <br />
     </div>
   );
