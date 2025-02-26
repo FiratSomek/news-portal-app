@@ -1,8 +1,8 @@
 import React from "react";
 import { IoMdMenu } from "react-icons/io";
-import { FaSearch } from "react-icons/fa";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
+import SearchBar from "./SearchBar";
 
 export const Header = () => {
   return (
@@ -10,11 +10,10 @@ export const Header = () => {
       <div className="  flex items-center justify-between p-2">
         <div className="flex mx-5 items-center ">
           <IoMdMenu className="text-4xl mx-2 cursor-pointer" />
-
-          <FaSearch className="text-2xl mx-2 cursor-pointer" />
+          <SearchBar />
         </div>{" "}
         <Link href={"/"}>
-          <div className="flex text-lg text-white cursor-pointer">
+          <div className="flex text-lg text-white cursor-pointer ">
             <div className="font-bold  bg-black p-2 m-1">N</div>
             <div className="font-bold bg-black p-2 m-1">E</div>
             <div className="font-bold bg-black p-2 m-1">W</div>
