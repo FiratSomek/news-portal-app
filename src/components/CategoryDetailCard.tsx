@@ -2,13 +2,13 @@ import Link from "next/link";
 import React from "react";
 import SeeMoreButton from "./SeeMoreButton";
 
-export interface CategoryCardProps {
+export interface CategoryDetailCardProps {
   name: string;
   description: string;
   url: string;
   country: string;
 }
-const CategoryCard: React.FC<CategoryCardProps> = ({
+const CategoryCard: React.FC<CategoryDetailCardProps> = ({
   name,
   description,
   url,

@@ -3,11 +3,16 @@
 import React, { useEffect, useState } from "react";
 import { API_URL, API_KEY } from "../../../../config";
 import { useParams } from "next/navigation";
+import SearchDetailCard, {
+  SearchDetailCardProps,
+} from "@/components/SearchDetailCard";
 
 const SearchDetailPage = () => {
   const params = useParams();
   const searchKey = params?.searchKey as string;
-  const [newsBySearchKey, setNewsBySearchKey] = useState([]);
+  const [newsBySearchKey, setNewsBySearchKey] = useState<
+    SearchDetailCardProps[]
+  >([]);
   console.log(newsBySearchKey);
   useEffect(() => {
     const fetchNewsBySearchKey = async () => {
@@ -20,7 +25,30 @@ const SearchDetailPage = () => {
     fetchNewsBySearchKey();
   }, []);
 
-  return <div>safsaf</div>;
+  return (
+    <div>
+      <ul>
+        {" "}
+        {newsBySearchKey ? (
+          newsBySearchKey.map((item, index) => (
+            <li key={index}>
+              <SearchDetailCard
+                author={item.author}
+                content={item.content}
+                description={item.description}
+                publishedAt={item.publishedAt}
+                title={item.title}
+                url={item.url}
+                urlToImage={item.urlToImage}
+              />
+            </li>
+          ))
+        ) : (
+          <p>Data yok</p>
+        )}
+      </ul>
+    </div>
+  );
 };
 
 export default SearchDetailPage;
