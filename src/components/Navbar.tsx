@@ -1,16 +1,8 @@
+import { CategoryNames } from "@/constants/categories";
 import Link from "next/link";
 import React from "react";
 
 const Navbar = () => {
-  const CategoryNames = [
-    "Home",
-    "Business",
-    "Entertainment",
-    "Health",
-    "Science",
-    "Sports",
-    "Technology",
-  ];
   return (
     <div className="p-5 border-b-4 border-t-4 ">
       <ul className="flex item-center justify-evenly ">

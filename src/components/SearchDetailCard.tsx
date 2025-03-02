@@ -28,8 +28,10 @@ const SearchDetailCard: React.FC<SearchDetailCardProps> = ({
       </div>
       <div className="flex flex-col  gap-10 mx-5">
         <h1 className="text-lg font-bold">{author}</h1>
-        <h3>{formattedDate}</h3>
         <h2>{title}</h2>
+        <h3 className="absolute top-10 right-4 text-black px-2 py-1 rounded">
+          {formattedDate}
+        </h3>
         <p>{description}</p>
         <Link href={url} target="_blank">
           <SeeMoreButton />

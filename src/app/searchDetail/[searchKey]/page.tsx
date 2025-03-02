@@ -34,7 +34,6 @@ const SearchDetailPage = () => {
             <li key={index}>
               <SearchDetailCard
                 author={item.author}
-                content={item.content}
                 description={item.description}
                 publishedAt={item.publishedAt}
                 title={item.title}
