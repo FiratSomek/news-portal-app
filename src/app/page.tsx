@@ -18,7 +18,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="pt-16 min-h-screen ">
       <ul>
         {newsData && Array.isArray(newsData) ? (
           newsData.map((item, index) => (

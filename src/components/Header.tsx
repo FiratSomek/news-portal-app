@@ -6,7 +6,7 @@ import DropDownMenu from "./DropDownMenu";
 
 export const Header = () => {
   return (
-    <div className="mb-20 z-50">
+    <div className="header">
       <div className="  flex items-center justify-between p-2">
         <div className="flex mx-5 items-center ">
           <DropDownMenu />
@@ -27,6 +27,7 @@ export const Header = () => {
           <button className=" font-bold  mx-2">Sign In</button>
         </div>
       </div>
+      {""}
       <div>
         <Navbar />
       </div>

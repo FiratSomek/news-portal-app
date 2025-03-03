@@ -47,19 +47,18 @@ body {
   border-radius: 10px;
   width: 80%;
   text-align: center;
-  margin: auto;
   margin-bottom: 10px;
   padding: 10px;
   gap: 10px;
   font-size: large;
 }
 .categoriesUi {
+  color: black;
   font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 .categoriesUi:hover {
-  color: lightgray;
+  color: lightslategrey;
   transform: scale(1.2);
 }
 .activetab {

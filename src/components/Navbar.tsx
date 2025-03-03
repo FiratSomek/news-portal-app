@@ -4,7 +4,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="p-5 border-b-4 border-t-4 ">
+    <div className="navbar">
       <ul className="flex item-center justify-evenly ">
         {CategoryNames.map((item, index) => (
           <li key={index} className="categoriesUi">
