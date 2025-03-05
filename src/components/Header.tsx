@@ -2,35 +2,39 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import SearchBar from "./SearchBar";
-import DropDownMenu from "./DropDownMenu";
+import DropDownMenu from "./buttons/DropDownMenuButton";
+import SignInButton from "./buttons/SignInButton";
+import SignUpButton from "./buttons/SignUpButton";
 
 export const Header = () => {
   return (
-    <div className="header">
-      <div className="  flex items-center justify-between p-2">
-        <div className="flex mx-5 items-center ">
+    <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+      <div className="flex justify-between items-center p-4">
+        <div className="flex items-center space-x-4">
           <DropDownMenu />
           <SearchBar />
-        </div>{" "}
-        <Link href={"/"}>
-          <div className="flex text-lg text-white cursor-pointer ">
-            <div className="font-bold  bg-black p-2 m-1">N</div>
-            <div className="font-bold bg-black p-2 m-1">E</div>
-            <div className="font-bold bg-black p-2 m-1">W</div>
-            <div className="font-bold bg-black p-2 m-1">S</div>
-          </div>{" "}
+        </div>
+
+        <Link href="/">
+          <div className="flex text-xl font-bold cursor-pointer">
+            {["N", "E", "W", "S"].map((letter, index) => (
+              <span
+                key={index}
+                className="bg-black text-white p-2 m-1 rounded-lg"
+              >
+                {letter}
+              </span>
+            ))}
+          </div>
         </Link>
-        <div className="flex mx-5">
-          <button className=" bg-black text-white w-20 h-10 p-2 font-bold mx-2">
-            Register
-          </button>
-          <button className=" font-bold  mx-2">Sign In</button>
+
+        <div className="flex space-x-4">
+          <SignUpButton />
+          <SignInButton />
         </div>
       </div>
-      {""}
-      <div>
-        <Navbar />
-      </div>
-    </div>
+
+      <Navbar />
+    </header>
   );
 };

@@ -8,17 +8,21 @@ import { IoCloseSharp } from "react-icons/io5";
 
 const DropDownMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="flex">
-      <button onClick={() => setIsOpen(!isOpen)}>
+    <div className="relative">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="text-4xl text-black"
+      >
         {isOpen ? (
-          <IoCloseSharp className="text-4xl mx-2 cursor-pointer" />
+          <IoCloseSharp className="cursor-pointer" />
         ) : (
-          <IoMdMenu className="text-4xl mx-2 cursor-pointer" />
+          <IoMdMenu className="cursor-pointer" />
         )}
       </button>
       {isOpen && (
-        <div className="flex flex-col absolute bg-gray-100 text-left left-20 p-5 gap-2 text-lg z-50 rounded-md font-bold">
+        <div className="absolute  bg-white shadow-xl rounded-md mt-2 w-48 z-50">
           {CategoryNames.map((category, index) => (
             <Link
               href={
@@ -26,12 +30,11 @@ const DropDownMenu = () => {
                   ? `/`
                   : `/categoryDetail/${category.toLocaleLowerCase()}`
               }
+              key={index}
             >
-              {" "}
               <button
                 onClick={() => setIsOpen(false)}
-                key={index}
-                className="hover:bg-gray-400 rounded-md p-2"
+                className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-200 rounded-md"
               >
                 {category}
               </button>

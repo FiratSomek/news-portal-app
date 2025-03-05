@@ -5,7 +5,7 @@ import { API_URL, API_KEY } from "../../../../config";
 import { useParams } from "next/navigation";
 import SearchDetailCard, {
   SearchDetailCardProps,
-} from "@/components/SearchDetailCard";
+} from "@/components/cards/SearchDetailCard";
 
 const SearchDetailPage = () => {
   const params = useParams();
@@ -27,7 +27,7 @@ const SearchDetailPage = () => {
 
   return (
     <div>
-      <ul>
+      <ul className="grid-container">
         {" "}
         {newsBySearchKey ? (
           newsBySearchKey.map((item, index) => (

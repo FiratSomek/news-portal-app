@@ -37,7 +37,7 @@ const SearchBar = () => {
           animate={{ width: "12rem", opacity: 1 }}
           exit={{ width: 0, opacity: 0 }}
           onChange={(e) => {
-            setQuery(e.target.value);
+            setQuery(e.target.value.toLowerCase());
           }}
           onKeyDown={(e) => {
             if (e.key === "Enter") {

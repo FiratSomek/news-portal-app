@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { API_URL, API_KEY } from "../../../../config";
 import CategoryCard, {
   CategoryDetailCardProps,
-} from "@/components/CategoryDetailCard";
+} from "@/components/cards/CategoryDetailCard";
 
 const CategoryDetailPage = () => {
   const params = useParams();
@@ -28,7 +28,7 @@ const CategoryDetailPage = () => {
 
   return (
     <div>
-      <ul>
+      <ul className="grid-container">
         {newsByCategory && Array.isArray(newsByCategory) ? (
           newsByCategory.map((item, index) => (
             <li key={index}>

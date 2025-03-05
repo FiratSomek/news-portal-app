@@ -1,6 +1,6 @@
 "use client";
 
-import HomePageCard, { NewsCardProps } from "@/components/HomePageCard";
+import HomePageCard, { NewsCardProps } from "@/components/cards/HomePageCard";
 import { useEffect, useState } from "react";
 import { API_URL, API_KEY } from "../../config";
 
@@ -18,8 +18,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="pt-16 min-h-screen ">
-      <ul>
+    <div className="pt-16 min-h-screen">
+      <ul className="grid-container">
         {newsData && Array.isArray(newsData) ? (
           newsData.map((item, index) => (
             <li key={index}>
