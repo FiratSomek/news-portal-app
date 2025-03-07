@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 
 const SignUpForm = () => {
@@ -61,10 +62,15 @@ const SignUpForm = () => {
         />
         <button
           type="submit"
-          className="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 transition"
+          className="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 transition mb-10"
         >
           Sign Up
         </button>
+        <Link href={`/sign-in`}>
+          <span className="p-2 cursor-pointer">
+            Do you have a already account? Sign in.
+          </span>
+        </Link>
       </form>
     </div>
   );

@@ -1,7 +1,8 @@
+import Link from "next/link";
 import React from "react";
 
 const SignIn = () => {
-  return <div>SignIn</div>;
+  return <div className="flex justify-center items-center p-10 ">Sign In</div>;
 };
 
 export default SignIn;
