@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white shadow-md fixed w-full ">
-      <ul className="flex justify-center space-x-6 p-4 ">
+      <ul className="flex  justify-center space-x-6 p-4 ">
         {CategoryNames.map((item, index) => {
           const isActive =
             (item === "Home" && pathname === "/") ||
@@ -26,7 +26,7 @@ const Navbar = () => {
                 className={`px-4 py-2 rounded-lg transition duration-300 ${
                   isActive
                     ? "bg-blue-600 text-white shadow-lg"
-                    : "text-gray-700 hover:bg-gray-100"
+                    : "text-black font-bold hover:bg-gray-100"
                 }`}
               >
                 {item}
