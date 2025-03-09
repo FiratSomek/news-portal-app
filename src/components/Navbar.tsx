@@ -8,7 +8,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-white shadow-md fixed w-full ">
+    <nav className="bg-white shadow-md fixed w-full z40 ">
       <ul className="flex  justify-center space-x-6 p-4 ">
         {CategoryNames.map((item, index) => {
           const isActive =
