@@ -12,14 +12,14 @@ export const Header = () => {
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-      <div className="flex justify-between items-center p-4">
-        <div className="flex items-center space-x-4">
+      <div className="flex justify-between items-center p-2">
+        <div className="flex items-center space-x-0 sm:space-x-2">
           <DropDownMenu />
           <SearchBar />
         </div>
 
         <Link href="/">
-          <div className="flex text-xl font-bold cursor-pointer">
+          <div className="flex text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl font-bold cursor-pointer">
             {["N", "E", "W", "S"].map((letter, index) => (
               <span
                 key={index}
@@ -31,13 +31,8 @@ export const Header = () => {
           </div>
         </Link>
 
-        {/* <div className="flex space-x-4">
-          <SignUpButton />
-          <SignInButton />
-        </div> */}
-        {/* Sağ tarafta butonlar */}
         <div className="relative flex items-center">
-          <div className="hidden md:flex space-x-4">
+          <div className="hidden md:flex space-x-2">
             <SignUpButton />
             <SignInButton />
           </div>

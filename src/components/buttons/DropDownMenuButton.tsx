@@ -13,7 +13,7 @@ const DropDownMenu = () => {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="text-4xl text-black"
+        className="mt-1 text-3xl sm:text-4xl text-black"
       >
         {isOpen ? (
           <IoCloseSharp className="cursor-pointer" />

@@ -16,7 +16,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="flex items-center font-black space-x-2 px-2 py-1 w-[200px] transition-all duration-300">
+    <div className="flex items-center font-black space-x-2 px-2 py-1 w-[80px] transition-all duration-300">
       <motion.button
         onClick={() => {
           if (query.trim() === "") {
@@ -26,15 +26,15 @@ const SearchBar = () => {
           }
         }}
       >
-        <FaSearch className="w-6 h-6 text-black-600 cursor-pointer" />
+        <FaSearch className="text-lg sm:text-2xl cursor-pointer" />
       </motion.button>
       {isOpen && (
         <motion.input
           type="text"
           placeholder="Search..."
-          className="outline-none bg-transparent text-gray-700 w-full transition-all border rounded-full p-2 "
+          className="outline-none bg-transparent w-[50px] transition-all border rounded-full p-1 sm:p-2 sm:w-[75px]  md:block"
           initial={{ width: 0, opacity: 0 }}
-          animate={{ width: "12rem", opacity: 1 }}
+          animate={{ width: "8rem", opacity: 1 }}
           exit={{ width: 0, opacity: 0 }}
           onChange={(e) => {
             setQuery(e.target.value.toLowerCase());
