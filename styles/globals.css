@@ -23,6 +23,6 @@ body {
   padding-top: 12rem;
 }
 .grid-container {
-  @apply grid gap-6 p-4;
+  @apply grid gap-6 p-4 place-items-center;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
 }
