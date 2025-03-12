@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth0/nextjs-auth0": "^3.6.0",
     "axios": "^1.7.9",
     "framer-motion": "^12.4.7",
     "next": "15.0.3",
