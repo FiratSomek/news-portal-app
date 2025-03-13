@@ -6,8 +6,7 @@ const SignUpButton = () => {
   return (
     <div>
       <Link href={`/sign-up`}>
-        {" "}
-        <button className="bg-black text-white px-2 py-2 font-bold rounded-lg hover:bg-gray-800 transition">
+        <button className="bg-black text-white px-2 py-2 font-bold rounded-lg hover:bg-gray-700 transition">
           Sign Up
         </button>
       </Link>

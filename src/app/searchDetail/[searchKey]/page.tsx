@@ -13,7 +13,7 @@ const SearchDetailPage = () => {
   const [newsBySearchKey, setNewsBySearchKey] = useState<
     SearchDetailCardProps[]
   >([]);
-  console.log(newsBySearchKey);
+
   useEffect(() => {
     const fetchNewsBySearchKey = async () => {
       const response = await fetch(

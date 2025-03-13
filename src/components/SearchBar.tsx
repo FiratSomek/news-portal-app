@@ -41,7 +41,7 @@ const SearchBar = () => {
           }}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
-              handleSearch(); // search with Enter
+              handleSearch();
             }
           }}
         />
