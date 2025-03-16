@@ -1,7 +1,7 @@
 import React from "react";
 
 const SignIn = () => {
-  return <div className="flex justify-center items-center p-10 ">Sign In</div>;
+  return <div>Sign In page</div>;
 };
 
 export default SignIn;

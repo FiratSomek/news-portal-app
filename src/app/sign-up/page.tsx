@@ -15,7 +15,6 @@ const SignUpForm = () => {
   };
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("user signed up", formData);
   };
   return (
     <div className="flex justify-center items-center p-10 ">

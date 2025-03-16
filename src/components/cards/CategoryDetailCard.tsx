@@ -25,7 +25,7 @@ const CategoryCard: React.FC<CategoryDetailCardProps> = ({
         <img
           src={`https://flagcdn.com/32x24/${country}.png`}
           alt={country}
-          className="w-8 h-6 shadow-lg"
+          className="w-10 h-8 shadow-lg"
         />
       </div>
       <p className="text-gray-600 text-sm sm:text-base line-clamp-3">
