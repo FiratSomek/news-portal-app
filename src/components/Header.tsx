@@ -4,9 +4,9 @@ import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import SearchBar from "./SearchBar";
 import DropDownMenu from "./buttons/DropDownMenuButton";
-import SignInButton from "./buttons/SignInButton";
-import SignUpButton from "./buttons/SignUpButton";
 import { IoPersonCircle } from "react-icons/io5";
+import LogInButton from "./buttons/LogInButton";
+import LogUpButton from "./buttons/LogUpButton";
 
 export const Header = () => {
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
@@ -33,8 +33,11 @@ export const Header = () => {
 
         <div className="relative flex items-center">
           <div className="hidden md:flex space-x-2">
-            <SignUpButton />
-            <SignInButton />
+            <LogUpButton />
+            <Link href="/api/auth/login">
+              {" "}
+              <LogInButton />
+            </Link>
           </div>
 
           <div className="md:hidden">
@@ -45,8 +48,11 @@ export const Header = () => {
             {isProfileMenuOpen && (
               <div className="absolute right-0 mt-2 bg-white shadow-lg rounded-md w-40 z-50">
                 <ul className="flex flex-col items-center p-2 space-y-2 ">
-                  <SignUpButton />
-                  <SignInButton />
+                  <LogUpButton />
+                  <Link href={`/api/auth/login`}>
+                    {" "}
+                    <LogInButton />
+                  </Link>
                 </ul>
               </div>
             )}
