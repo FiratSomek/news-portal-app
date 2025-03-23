@@ -7,9 +7,15 @@ import DropDownMenu from "./buttons/DropDownMenuButton";
 import { IoPersonCircle } from "react-icons/io5";
 import LogInButton from "./buttons/LogInButton";
 import LogUpButton from "./buttons/LogUpButton";
+import { useUser } from "@auth0/nextjs-auth0/client";
+import LogOutButton from "./buttons/LogOutButton";
 
 export const Header = () => {
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
+  const { user, error, isLoading } = useUser();
+
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
       <div className="flex justify-between items-center p-2">
@@ -32,13 +38,20 @@ export const Header = () => {
         </Link>
 
         <div className="relative flex items-center">
-          <div className="hidden md:flex space-x-2">
-            <LogUpButton />
-            <Link href="/api/auth/login">
-              {" "}
-              <LogInButton />
-            </Link>
-          </div>
+          {user ? (
+            <div className="hidden md:flex space-x-2">
+              <p>Welcome, {user.name}</p>
+              <Link href="/api/auth/logout">
+                <LogOutButton />
+              </Link>
+            </div>
+          ) : (
+            <div className="hidden md:flex space-x-2">
+              <Link href="/api/auth/login">
+                <LogInButton />
+              </Link>
+            </div>
+          )}
 
           <div className="md:hidden">
             <button onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}>
@@ -47,13 +60,21 @@ export const Header = () => {
 
             {isProfileMenuOpen && (
               <div className="absolute right-0 mt-2 bg-white shadow-lg rounded-md w-40 z-50">
-                <ul className="flex flex-col items-center p-2 space-y-2 ">
-                  <LogUpButton />
-                  <Link href={`/api/auth/login`}>
-                    {" "}
-                    <LogInButton />
-                  </Link>
-                </ul>
+                {user ? (
+                  <ul className="flex flex-col items-center p-2 space-y-2 ">
+                    <p>Welcome, {user.name}</p>
+
+                    <Link href="/api/auth/logout">
+                      <LogOutButton />
+                    </Link>
+                  </ul>
+                ) : (
+                  <ul className="flex flex-col items-center p-2 space-y-2 ">
+                    <Link href="/api/auth/logout">
+                      <LogInButton />
+                    </Link>
+                  </ul>
+                )}
               </div>
             )}
           </div>
