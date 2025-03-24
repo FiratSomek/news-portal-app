@@ -1,11 +1,10 @@
-import Link from "next/link";
 import React from "react";
 
 const LogOutButton = () => {
   const handleLogout = () => {
     localStorage.clear();
     sessionStorage.clear();
-    window.location.href = "/api/auth/logout?federated"; // Çıkış yap ve Auth0 çerezlerini temizle
+    window.location.href = "/api/auth/logout?federated";
   };
   return (
     <div>

@@ -6,7 +6,6 @@ import SearchBar from "./SearchBar";
 import DropDownMenu from "./buttons/DropDownMenuButton";
 import { IoPersonCircle } from "react-icons/io5";
 import LogInButton from "./buttons/LogInButton";
-import LogUpButton from "./buttons/LogUpButton";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import LogOutButton from "./buttons/LogOutButton";
 
@@ -70,7 +69,7 @@ export const Header = () => {
                   </ul>
                 ) : (
                   <ul className="flex flex-col items-center p-2 space-y-2 ">
-                    <Link href="/api/auth/logout">
+                    <Link href="/api/auth/login">
                       <LogInButton />
                     </Link>
                   </ul>
