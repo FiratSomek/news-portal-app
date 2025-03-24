@@ -9,6 +9,8 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Uygulamayı localhost ta ilk çalıştırdıgımda home page de api'den herhangi bir veri alamamıyorum ama sayfa görüntüleniyor ve category butonları vs basıp verileri çekebiliyorum ama vercel deploy ettiğimde ilk çalıştırdıgımda veriler gelmediği için hata alıyorum ve sayfagörüntülenemiyor. Nerede hata yaptıgımı da merak ediyorum bir türlü bulamadım
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
