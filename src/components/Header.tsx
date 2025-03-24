@@ -13,7 +13,7 @@ export const Header = () => {
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
   const { user, error, isLoading } = useUser();
 
-  if (isLoading) return <p>Loading...</p>;
+  if (user && isLoading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
