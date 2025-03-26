@@ -13,23 +13,35 @@ const CategoryDetailPage = () => {
   const [newsByCategory, setNewsByCategory] = useState<
     CategoryDetailCardProps[]
   >([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!category) return;
     const fetchNewsByCategory = async () => {
-      const response = await fetch(
-        `${API_URL}/sources?category=${category}&apiKey=${API_KEY}`
-      );
-      const data = await response.json();
-      setNewsByCategory(data.sources);
+      try {
+        setLoading(true);
+        const response = await fetch(
+          `${API_URL}/sources?category=${category}&apiKey=${API_KEY}`
+        );
+        const data = await response.json();
+        setNewsByCategory(data.sources || []);
+      } catch (error) {
+        console.error("Data extraction error", error);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchNewsByCategory();
   }, [category]);
+  if (loading) {
+    return <p>Loading News...</p>;
+  }
 
   return (
     <div>
       <ul className="grid-container">
-        {newsByCategory && Array.isArray(newsByCategory) ? (
+        {newsByCategory.length > 0 ? (
           newsByCategory.map((item, index) => (
             <li key={index}>
               <CategoryCard
@@ -41,7 +53,7 @@ const CategoryDetailPage = () => {
             </li>
           ))
         ) : (
-          <p>Haberler yükleniyor veya veri yok...</p>
+          <p>No news was found for this category</p>
         )}
       </ul>
     </div>
