@@ -48,8 +48,8 @@ const Navbar = () => {
                   }
                   className={`block px-4 py-2 rounded-lg transition duration-300 text-center text-sm ${
                     isActive
-                      ? "bg-blue-600 text-white shadow-lg"
-                      : "text-black font-bold hover:bg-gray-100"
+                      ? "bg-blue-600 text-white shadow-xl"
+                      : "text-black font-bold hover:bg-gray-300"
                   }`}
                 >
                   {item}
@@ -76,8 +76,8 @@ const Navbar = () => {
                 }
                 className={`block px-4 py-2 rounded-lg transition duration-300 text-lg ${
                   isActive
-                    ? "bg-blue-600 text-white shadow-lg"
-                    : "text-black font-bold hover:bg-gray-100"
+                    ? "bg-blue-600 text-white shadow-xl"
+                    : "text-black font-bold hover:bg-gray-300"
                 }`}
               >
                 {item}
