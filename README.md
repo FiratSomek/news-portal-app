@@ -20,7 +20,6 @@ The **News Portal App** is a modern and dynamic news website built with **Next.j
 - **Next.js** – For server-side rendering and static site generation.
 - **React** – For building reusable UI components.
 - **Tailwind CSS** – For styling and responsive design.
-- **Framer Motion** – For smooth animations.
 - **React Icons** – For enhanced UI experience.
 - **Git & GitHub** – Version control and collaboration.
 
